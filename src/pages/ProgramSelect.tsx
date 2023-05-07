@@ -1,21 +1,18 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-export const Homepage = () => {
+export const ProgramSelect = () => {
   let navigate = useNavigate();
 
   const handleNavigate = () => {
-    navigate("/program-select");
+    navigate("/5/3/1-training");
   };
 
   return (
     <div>
       <div>
-        <h1>Strength Training</h1>
-        <h1>Calc</h1>
-      </div>
-      <div>
-        <button onClick={handleNavigate}>Get Started</button>
+        <h1>Select your program:</h1>
+        <button onClick={handleNavigate}>5/3/1</button>
       </div>
     </div>
   );
