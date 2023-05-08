@@ -19,19 +19,35 @@ type PercentArray = number[];
 
 type Week = {
   percentArray: PercentArray;
-  liftPerc: number[][];
+  liftPerc: {
+    liftName: string;
+    values: number[];
+  }[];
 };
 
 const defaultWeeks: Week[] = [
-  { percentArray: [0.65, 0.75, 0.85, 0.7], liftPerc: [] },
-  { percentArray: [0.7, 0.8, 0.9, 0.75], liftPerc: [] },
-  { percentArray: [0.75, 0.85, 0.95, 0.8], liftPerc: [] },
-  { percentArray: [0.4, 0.5, 0.6, 0.45], liftPerc: [] },
+  {
+    percentArray: [0.65, 0.75, 0.85, 0.7],
+    liftPerc: [],
+  },
+  {
+    percentArray: [0.7, 0.8, 0.9, 0.75],
+    liftPerc: [],
+  },
+  {
+    percentArray: [0.75, 0.85, 0.95, 0.8],
+    liftPerc: [],
+  },
+  {
+    percentArray: [0.4, 0.5, 0.6, 0.45],
+    liftPerc: [],
+  },
 ];
 
 export const FiveThreeOneProgram = () => {
   const [liftInputs, setLiftInputs] = useState<LiftInputs>(initialLiftInputs);
   const [week, setWeek] = useState(defaultWeeks);
+  const [showTable, setShowTable] = useState(false);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -50,34 +66,20 @@ export const FiveThreeOneProgram = () => {
     const newWeeks = week.map((week) => ({
       percentArray: week.percentArray,
       liftPerc: [
-        calculateWeekValues(week, "deadlift"),
-        calculateWeekValues(week, "squat"),
-        calculateWeekValues(week, "bench"),
-        calculateWeekValues(week, "overhead"),
+        { liftName: "Deadlift", values: calculateWeekValues(week, "deadlift") },
+        { liftName: "Squat", values: calculateWeekValues(week, "squat") },
+        { liftName: "Bench", values: calculateWeekValues(week, "bench") },
+        {
+          liftName: "Overhead Press",
+          values: calculateWeekValues(week, "overhead"),
+        },
       ],
     }));
     setWeek(newWeeks);
-    newWeeks.forEach((lift) => {
-      const liftValues = lift.liftPerc[0]; // get the array of values
-      console.log(`[${liftValues.join(", ")}]`);
-    });
-  };
-
-  /*
-  const handleCalculateClick = () => {
-    const newWeeks = week.map((week) => ({
-      percentArray: week.percentArray,
-      liftPerc: [
-        calculateWeekValues(week, "deadlift"),
-        calculateWeekValues(week, "squat"),
-        calculateWeekValues(week, "bench"),
-        calculateWeekValues(week, "overhead"),
-      ],
-    }));
-    setWeek(newWeeks);
+    setShowTable(true);
     console.log(newWeeks);
   };
-*/
+
   return (
     <div>
       <div>
@@ -120,7 +122,7 @@ export const FiveThreeOneProgram = () => {
         <button onClick={handleCalculateClick}>Go</button>
       </div>
       <div>
-        <PercentageTable />
+        <PercentageTable week={week} showTable={showTable} />
       </div>
     </div>
   );
