@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 type PercentArray = number[];
 
@@ -36,10 +36,6 @@ export const PercentageTable: React.FC<Props> = ({ week, showTable }) => {
     setWeekSelected(selectOption);
   };
 
-  useEffect(() => {
-    console.log(weekSelected);
-  }, [weekSelected]);
-
   return (
     <div>
       <div>
@@ -68,7 +64,7 @@ export const PercentageTable: React.FC<Props> = ({ week, showTable }) => {
               <tr key={i}>
                 <td>Set {i + 1}</td>
                 {week[weekSelected].liftPerc.map((lift, j) => (
-                  <td key={j}>{lift.values[i]} KG</td>
+                  <td key={j}>{lift.values[i].toFixed(1)}</td>
                 ))}
               </tr>
             ))}

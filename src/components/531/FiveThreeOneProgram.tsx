@@ -48,6 +48,7 @@ export const FiveThreeOneProgram = () => {
   const [liftInputs, setLiftInputs] = useState<LiftInputs>(initialLiftInputs);
   const [week, setWeek] = useState(defaultWeeks);
   const [showTable, setShowTable] = useState(false);
+  const [liftValues, setLiftValues] = useState(false);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -60,6 +61,20 @@ export const FiveThreeOneProgram = () => {
   const calculateWeekValues = (week: Week, liftName: keyof LiftInputs) => {
     const liftValue = liftInputs[liftName];
     return week.percentArray.map((percent) => percent * liftValue);
+  };
+
+  const checkInputValue = () => {
+    if (
+      liftInputs.deadlift !== 0 &&
+      liftInputs.bench !== 0 &&
+      liftInputs.overhead !== 0 &&
+      liftInputs.squat !== 0
+    ) {
+      setLiftValues(false);
+    } else {
+      setShowTable(false);
+      setLiftValues(true);
+    }
   };
 
   const handleCalculateClick = () => {
@@ -77,7 +92,7 @@ export const FiveThreeOneProgram = () => {
     }));
     setWeek(newWeeks);
     setShowTable(true);
-    console.log(newWeeks);
+    checkInputValue();
   };
 
   return (
@@ -121,9 +136,19 @@ export const FiveThreeOneProgram = () => {
         />
         <button onClick={handleCalculateClick}>Go</button>
       </div>
-      <div>
-        <PercentageTable week={week} showTable={showTable} />
-      </div>
+      {liftValues && (
+        <div>
+          <h1>
+            One or more of your lifts are not entered, please input your one rep
+            max for each lift.
+          </h1>
+        </div>
+      )}
+      {showTable && (
+        <div>
+          <PercentageTable week={week} showTable={showTable} />
+        </div>
+      )}
     </div>
   );
 };
