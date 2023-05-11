@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 
 export const ProgramSelect = () => {
@@ -18,7 +17,6 @@ export const ProgramSelect = () => {
         <button>Training 4</button>
         <button>Training 5</button>
         <button>Single Lifts</button>
-        <button>Accessory Exercises</button>
       </div>
     </div>
   );
