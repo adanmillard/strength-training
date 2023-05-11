@@ -1,5 +1,6 @@
 import { PercentageTable } from "../PercentageTable/PercentageTable";
 import { useState } from "react";
+import { Accessories } from "../Accessories/Accessories";
 
 type LiftInputs = {
   deadlift: number;
@@ -149,6 +150,7 @@ export const FiveThreeOneProgram = () => {
           <PercentageTable week={week} showTable={showTable} />
         </div>
       )}
+      <Accessories />
     </div>
   );
 };
