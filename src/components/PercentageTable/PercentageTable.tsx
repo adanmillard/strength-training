@@ -37,9 +37,13 @@ export const PercentageTable: React.FC<Props> = ({ week, showTable }) => {
   };
 
   return (
-    <div>
-      <div>
-        <select name="training-weeks" onChange={handleSelectedWeek}>
+    <div className="flex flex-col justify-center items-center mb-6">
+      <div className="mb-6">
+        <select
+          name="training-weeks"
+          className="border rounded p-2 shadow w-36 text-center"
+          onChange={handleSelectedWeek}
+        >
           {selectWeek[0].weekName.map((week, i) => {
             return (
               <option key={i} value={i}>
@@ -50,21 +54,25 @@ export const PercentageTable: React.FC<Props> = ({ week, showTable }) => {
         </select>
       </div>
       {showTable && (
-        <table>
-          <thead>
+        <table className="w-4/5 border shadow rounded">
+          <thead className="bg-gray-50 border-b-2 border-gray-200">
             <tr>
-              <th>Lift</th>
+              <th>&nbsp;</th>
               {week[weekSelected].liftPerc.map((lift) => (
-                <th key={lift.liftName}>{lift.liftName}</th>
+                <th key={lift.liftName} className="text-sm p-3">
+                  {lift.liftName}
+                </th>
               ))}
             </tr>
           </thead>
           <tbody>
             {week[weekSelected].liftPerc[0].values.map((value, i) => (
               <tr key={i}>
-                <td>Set {i + 1}</td>
+                <td className="text-center font-bold">Set {i + 1}:</td>
                 {week[weekSelected].liftPerc.map((lift, j) => (
-                  <td key={j}>{lift.values[i].toFixed(1)}</td>
+                  <td className="text-center p-3 text-sm" key={j}>
+                    {lift.values[i].toFixed(1)}
+                  </td>
                 ))}
               </tr>
             ))}

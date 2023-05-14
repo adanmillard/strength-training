@@ -8,16 +8,18 @@ export const ProgramSelect = () => {
   };
 
   return (
-    <div>
-      <div>
+    <>
+      <div className="center-page-col">
         <h1>Select your program:</h1>
-        <button onClick={handleNavigate}>5/3/1</button>
-        <button>Training 2</button>
-        <button>Training 3</button>
-        <button>Training 4</button>
-        <button>Training 5</button>
-        <button>Single Lifts</button>
+        <button onClick={handleNavigate} className="btn">
+          5/3/1
+        </button>
+        <button className="btn">Training 2</button>
+        <button className="btn">Training 3</button>
+        <button className="btn">Training 4</button>
+        <button className="btn">Training 5</button>
+        <button className="btn">Single Lifts</button>
       </div>
-    </div>
+    </>
   );
 };

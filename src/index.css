@@ -1,3 +1,35 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+@layer components {
+  .btn {
+    @apply mt-6 p-2 rounded  border w-36 object-center shadow;
+  }
+
+  .center-page-col {
+    @apply flex flex-col justify-center h-screen items-center;
+  }
+}
+
+@layer base {
+  h1 {
+    @apply text-4xl tracking-normal;
+  }
+  input {
+    @apply ml-4 border mt-2 shadow rounded pl-2 w-auto;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    display: none;
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color: #fff;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #f8f8f8;
+  }
+}
