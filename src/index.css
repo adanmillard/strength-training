@@ -24,4 +24,12 @@
   input::-webkit-inner-spin-button {
     display: none;
   }
+
+  tbody tr:nth-child(odd) {
+    background-color: #fff;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #f8f8f8;
+  }
 }

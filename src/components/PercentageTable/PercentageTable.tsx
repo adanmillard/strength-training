@@ -37,7 +37,7 @@ export const PercentageTable: React.FC<Props> = ({ week, showTable }) => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center mb-6">
       <div className="mb-6">
         <select
           name="training-weeks"
