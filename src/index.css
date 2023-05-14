@@ -4,7 +4,7 @@
 
 @layer components {
   .btn {
-    @apply mt-6 p-2 rounded border-gray-500 border w-36 object-center shadow;
+    @apply mt-6 p-2 rounded  border w-36 object-center shadow;
   }
 
   .center-page-col {
@@ -14,6 +14,14 @@
 
 @layer base {
   h1 {
-    @apply text-4xl;
+    @apply text-4xl tracking-normal;
+  }
+  input {
+    @apply ml-4 border mt-2 shadow rounded pl-2 w-auto;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    display: none;
   }
 }

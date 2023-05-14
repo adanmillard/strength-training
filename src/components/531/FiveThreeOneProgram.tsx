@@ -86,7 +86,7 @@ export const FiveThreeOneProgram = () => {
         { liftName: "Squat", values: calculateWeekValues(week, "squat") },
         { liftName: "Bench", values: calculateWeekValues(week, "bench") },
         {
-          liftName: "Overhead Press",
+          liftName: "Overhead",
           values: calculateWeekValues(week, "overhead"),
         },
       ],
@@ -97,10 +97,10 @@ export const FiveThreeOneProgram = () => {
   };
 
   return (
-    <div>
-      <div>
-        <h1>5 / 3 / 1 Strength Training</h1>
-        <p>
+    <>
+      <div className="flex flex-col justify-center items-center">
+        <h1 className="mb-4 mt-4">5 / 3 / 1 Strength Training</h1>
+        <p className="mb-4 text-center">
           The 5/3/1 workout is a powerlifting program designed by powerlifter
           Jim Wendler. The key concept is to slowly build strength through four
           barbell weightlifting exercises: the parallel squat, bench press,
@@ -108,56 +108,68 @@ export const FiveThreeOneProgram = () => {
           military press. The goal of the 5/3/1 workout is to achieve a new one
           rep max (1RM).
         </p>
-        <p>
+        <p className="mb-2">
           Enter your 1RM into the calculator to see what your percentage based
           lifts will be, enter KG or LBS, lifts are percentage based.
         </p>
       </div>
-      <div>
-        <label>1RM Deadlift</label>
-        <input
-          type="number"
-          name="deadlift"
-          value={liftInputs.deadlift}
-          onChange={handleInputChange}
-        />
-        <label>1RM Squat</label>
-        <input
-          type="number"
-          name="squat"
-          value={liftInputs.squat}
-          onChange={handleInputChange}
-        />
-        <label>1RM Bench Press</label>
-        <input
-          type="number"
-          name="bench"
-          value={liftInputs.bench}
-          onChange={handleInputChange}
-        />
-        <label>1RM Overhead Press</label>
-        <input
-          type="number"
-          name="overhead"
-          value={liftInputs.overhead}
-          onChange={handleInputChange}
-        />
-        <button onClick={handleCalculateClick}>Go</button>
+      <div className="flex flex-col mt-6 mb-6">
+        <div className="flex justify-center">
+          <div className="flex flex-col items-start">
+            <label className="mr-4 mt-2" htmlFor="deadlift">
+              <b>1RM Deadlift:</b>
+            </label>
+            <label className="mr-4 mt-2" htmlFor="squat">
+              <b>1RM Squat:</b>
+            </label>
+            <label className="mr-4 mt-2" htmlFor="bench">
+              <b>1RM Bench Press:</b>
+            </label>
+            <label className="mr-4 mt-2" htmlFor="overhead">
+              <b>1RM Overhead Press:</b>
+            </label>
+          </div>
+          <div className="flex flex-col  items-center">
+            <input
+              type="number"
+              name="deadlift"
+              value={liftInputs.deadlift}
+              onChange={handleInputChange}
+            />
+            <input
+              type="number"
+              name="squat"
+              value={liftInputs.squat}
+              onChange={handleInputChange}
+            />
+            <input
+              type="number"
+              name="bench"
+              value={liftInputs.bench}
+              onChange={handleInputChange}
+            />
+            <input
+              type="number"
+              name="overhead"
+              value={liftInputs.overhead}
+              onChange={handleInputChange}
+            />
+          </div>
+        </div>
+        <button className="btn self-center" onClick={handleCalculateClick}>
+          Go
+        </button>
       </div>
       {liftValues && (
-        <div>
-          <h1>
+        <div className="flex justify-center">
+          <p className="text-red-600 mb-4">
             One or more of your lifts are not entered, please input your one rep
             max for each lift.
-          </h1>
+          </p>
         </div>
       )}
-      {showTable && (
-        <div>
-          <PercentageTable week={week} showTable={showTable} />
-        </div>
-      )}
+      {showTable && <PercentageTable week={week} showTable={showTable} />}
       <Accessories />
-    </div>
+    </>
   );
 };
