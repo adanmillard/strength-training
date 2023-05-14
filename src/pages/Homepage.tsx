@@ -10,12 +10,12 @@ export const Homepage = () => {
 
   return (
     <>
-      <div className="flex flex-col">
-        <h1 className="text-green-500 text-4xl">Strength Training</h1>
-        <h1>Calc</h1>
-      </div>
-      <div>
-        <button onClick={handleNavigate}>Get Started</button>
+      <div className="flex flex-col justify-center h-screen items-center">
+        <h1>Strength Training</h1>
+        <h1>Helper</h1>
+        <button onClick={handleNavigate} className="btn">
+          Get Started
+        </button>
       </div>
     </>
   );
