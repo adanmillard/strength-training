@@ -11,16 +11,6 @@ type Week = {
   }[];
 };
 
-type SelectWeek = {
-  weekName: string[];
-};
-
-const selectWeek: SelectWeek[] = [
-  {
-    weekName: ["Week 1", "Week 2", "Week 3", "Week 4"],
-  },
-];
-
 type ShowTable = boolean;
 
 type Props = {
@@ -44,10 +34,10 @@ export const PercentageTable: React.FC<Props> = ({ week, showTable }) => {
           className="border rounded p-2 shadow w-36 text-center"
           onChange={handleSelectedWeek}
         >
-          {selectWeek[0].weekName.map((week, i) => {
+          {week.map((week, i) => {
             return (
               <option key={i} value={i}>
-                {week}
+                Week {i + 1}
               </option>
             );
           })}
