@@ -1,20 +1,5 @@
-import { PercentageTable } from "../PercentageTable/PercentageTable";
 import { useState } from "react";
-import { Accessories } from "../Accessories/Accessories";
-
-type LiftInputs = {
-  deadlift: number;
-  squat: number;
-  bench: number;
-  overhead: number;
-};
-
-const initialLiftInputs: LiftInputs = {
-  deadlift: 0,
-  squat: 0,
-  overhead: 0,
-  bench: 0,
-};
+import { RMInputs } from "../RMInputs/RMInputs";
 
 type PercentArray = number[];
 
@@ -46,60 +31,12 @@ const defaultWeeks: Week[] = [
 ];
 
 export const FiveThreeOneProgram = () => {
-  const [liftInputs, setLiftInputs] = useState<LiftInputs>(initialLiftInputs);
   const [week, setWeek] = useState(defaultWeeks);
-  const [showTable, setShowTable] = useState(false);
-  const [liftValues, setLiftValues] = useState(false);
-
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-    setLiftInputs((prevInputs) => ({
-      ...prevInputs,
-      [name]: parseFloat(value),
-    }));
-  };
-
-  const calculateWeekValues = (week: Week, liftName: keyof LiftInputs) => {
-    const liftValue = liftInputs[liftName];
-    return week.percentArray.map((percent) => percent * liftValue);
-  };
-
-  const checkInputValue = () => {
-    if (
-      liftInputs.deadlift !== 0 &&
-      liftInputs.bench !== 0 &&
-      liftInputs.overhead !== 0 &&
-      liftInputs.squat !== 0
-    ) {
-      setLiftValues(false);
-    } else {
-      setShowTable(false);
-      setLiftValues(true);
-    }
-  };
-
-  const handleCalculateClick = () => {
-    const newWeeks = week.map((week) => ({
-      percentArray: week.percentArray,
-      liftPerc: [
-        { liftName: "Deadlift", values: calculateWeekValues(week, "deadlift") },
-        { liftName: "Squat", values: calculateWeekValues(week, "squat") },
-        { liftName: "Bench", values: calculateWeekValues(week, "bench") },
-        {
-          liftName: "Overhead",
-          values: calculateWeekValues(week, "overhead"),
-        },
-      ],
-    }));
-    setWeek(newWeeks);
-    setShowTable(true);
-    checkInputValue();
-  };
 
   return (
     <>
       <div className="flex flex-col justify-center items-center">
-        <h1 className="mb-4 mt-4">5 / 3 / 1 Strength Training</h1>
+        <h1 className="mb-4 mt-4 text-center">5 / 3 / 1 Strength Training</h1>
         <p className="mb-4 text-center">
           The 5/3/1 workout is a powerlifting program designed by powerlifter
           Jim Wendler. The key concept is to slowly build strength through four
@@ -108,68 +45,12 @@ export const FiveThreeOneProgram = () => {
           military press. The goal of the 5/3/1 workout is to achieve a new one
           rep max (1RM).
         </p>
-        <p className="mb-2">
+        <p className="mb-2 text-center">
           Enter your 1RM into the calculator to see what your percentage based
           lifts will be, enter KG or LBS, lifts are percentage based.
         </p>
       </div>
-      <div className="flex flex-col mt-6 mb-6">
-        <div className="flex justify-center">
-          <div className="flex flex-col items-start">
-            <label className="mr-4 mt-2" htmlFor="deadlift">
-              <b>1RM Deadlift:</b>
-            </label>
-            <label className="mr-4 mt-2" htmlFor="squat">
-              <b>1RM Squat:</b>
-            </label>
-            <label className="mr-4 mt-2" htmlFor="bench">
-              <b>1RM Bench Press:</b>
-            </label>
-            <label className="mr-4 mt-2" htmlFor="overhead">
-              <b>1RM Overhead Press:</b>
-            </label>
-          </div>
-          <div className="flex flex-col  items-center">
-            <input
-              type="number"
-              name="deadlift"
-              value={liftInputs.deadlift}
-              onChange={handleInputChange}
-            />
-            <input
-              type="number"
-              name="squat"
-              value={liftInputs.squat}
-              onChange={handleInputChange}
-            />
-            <input
-              type="number"
-              name="bench"
-              value={liftInputs.bench}
-              onChange={handleInputChange}
-            />
-            <input
-              type="number"
-              name="overhead"
-              value={liftInputs.overhead}
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-        <button className="btn self-center" onClick={handleCalculateClick}>
-          Go
-        </button>
-      </div>
-      {liftValues && (
-        <div className="flex justify-center">
-          <p className="text-red-600 mb-4">
-            One or more of your lifts are not entered, please input your one rep
-            max for each lift.
-          </p>
-        </div>
-      )}
-      {showTable && <PercentageTable week={week} showTable={showTable} />}
-      <Accessories />
+      <RMInputs week={week} setWeek={setWeek} />
     </>
   );
 };
