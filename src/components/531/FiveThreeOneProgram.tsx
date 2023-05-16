@@ -37,7 +37,7 @@ export const FiveThreeOneProgram = () => {
     <>
       <div className="flex flex-col justify-center items-center">
         <h1 className="mb-4 mt-4 text-center">5 / 3 / 1 Strength Training</h1>
-        <p className="mb-4 text-center">
+        <p className="mb-4 text-center mx-6">
           The 5/3/1 workout is a powerlifting program designed by powerlifter
           Jim Wendler. The key concept is to slowly build strength through four
           barbell weightlifting exercises: the parallel squat, bench press,
