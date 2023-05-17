@@ -11,7 +11,7 @@ export const Accessories = () => {
         <h1 onClick={() => setShowAccessory(!showAccessory)}>
           Accessory Exercises{" "}
           <FontAwesomeIcon
-            icon={showAccessory ? faChevronDown : faChevronUp}
+            icon={showAccessory ? faChevronUp : faChevronDown}
             size="xs"
           />
         </h1>
@@ -35,16 +35,16 @@ export const Accessories = () => {
               <p>Lat Pull Downs</p>
             </div>
             <div className="mb-8 mt-4">
+              <h2>Squat:</h2>
+              <p>Leg Press</p>
+              <p>Lunges</p>
+              <p>Lying Leg Curls</p>
+            </div>
+            <div className="mb-8 mt-4">
               <h2>Bench Press:</h2>
               <p>Incline Dumbbell Press</p>
               <p>Body Weight Dips</p>
               <p>Skullcrushers</p>
-            </div>
-            <div className="mb-8 mt-4">
-              <h2>Squats:</h2>
-              <p>Leg Press</p>
-              <p>Lunges</p>
-              <p>Lying Leg Curls</p>
             </div>
             <div className="mb-8 mt-4">
               <h2>Overhead Press:</h2>
