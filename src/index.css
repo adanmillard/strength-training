@@ -16,6 +16,9 @@
   h1 {
     @apply text-4xl tracking-normal;
   }
+  h2 {
+    @apply text-2xl tracking-normal;
+  }
   input {
     @apply ml-4 border mt-2 shadow rounded pl-2 w-auto;
   }
