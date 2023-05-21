@@ -4,6 +4,7 @@ import { ProgramSelect } from "./pages/ProgramSelect";
 import { FiveThreeOnePage } from "./pages/FiveThreeOnePage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FiveByFivePage } from "./pages/FiveByFivePage";
+import { ExercisesPage } from "./pages/ExercisesPage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/program-select" element={<ProgramSelect />} />
           <Route path="/5/3/1-training" element={<FiveThreeOnePage />} />
           <Route path="/5X5-training" element={<FiveByFivePage />} />
+          <Route path="/exercises" element={<ExercisesPage />} />
         </Routes>
       </BrowserRouter>
     </div>

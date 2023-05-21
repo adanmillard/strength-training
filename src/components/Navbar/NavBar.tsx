@@ -11,7 +11,7 @@ export const NavBar = () => {
   const navItems = [
     {
       itemName: "Exercises",
-      link: "/",
+      link: "/exercises",
     },
     {
       itemName: "About",
@@ -51,7 +51,7 @@ export const NavBar = () => {
                   key={i}
                   className="md:ml-8  md:my-0 my-7 hover:text-gray-500"
                 >
-                  {item.itemName}
+                  <a href={item.link}>{item.itemName}</a>
                 </li>
               );
             })}
