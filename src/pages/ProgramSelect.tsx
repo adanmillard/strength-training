@@ -19,7 +19,7 @@ export const ProgramSelect = () => {
   return (
     <>
       <div className="center-page-col">
-        <h1>Select your type of Training:</h1>
+        <h1 className="text-center">Select your type of Training:</h1>
         <button className="btn" onClick={() => setStrength(!strength)}>
           Strength
         </button>
