@@ -1,9 +1,12 @@
 import { faBoxOpen, faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const NavBar = () => {
   const [open, setOpen] = useState(false);
+
+  let navigate = useNavigate();
 
   const navItems = [
     {
@@ -15,6 +18,10 @@ export const NavBar = () => {
       link: "/",
     },
   ];
+
+  const handleNavigate = () => {
+    navigate("/program-select");
+  };
 
   return (
     <>
@@ -41,7 +48,9 @@ export const NavBar = () => {
                 </li>
               );
             })}
-            <button className="btn mt-0 w-32 mx-4">Get Started</button>
+            <button className="btn mt-0 w-32 mx-4" onClick={handleNavigate}>
+              Get Started
+            </button>
           </ul>
         </div>
       </nav>
