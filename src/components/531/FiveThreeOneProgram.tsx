@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { RMInputs } from "../RMInputs/RMInputs";
+import { Hamburger } from "../Hamburger/Hamburger";
 
 type PercentArray = number[];
 
@@ -35,6 +36,7 @@ export const FiveThreeOneProgram = () => {
 
   return (
     <>
+      <Hamburger />
       <div className="flex flex-col justify-center items-center">
         <h1 className="mb-4 mt-4 text-center">5 / 3 / 1 Strength Training</h1>
         <p className="mb-4 text-center mx-6">

@@ -3,6 +3,7 @@ import { PercentageTable } from "../PercentageTable/PercentageTable";
 import { Accessories } from "../Accessories/Accessories";
 
 type LiftInputs = {
+  [key: string]: number;
   deadlift: number;
   squat: number;
   bench: number;
@@ -50,17 +51,21 @@ export const RMInputs: React.FC<Props> = ({ week, setWeek }) => {
   };
 
   const checkInputValue = () => {
-    if (
-      liftInputs.deadlift !== 0 &&
-      liftInputs.bench !== 0 &&
-      liftInputs.overhead !== 0 &&
-      liftInputs.squat !== 0
-    ) {
-      setLiftValues(false);
-    } else {
-      setShowTable(false);
-      setLiftValues(true);
+    const inputFields = ["deadlift", "bench", "overhead", "squat"];
+
+    for (const field of inputFields) {
+      if (
+        liftInputs[field] === 0 ||
+        liftInputs[field] === null ||
+        Number.isNaN(liftInputs[field])
+      ) {
+        setShowTable(false);
+        setLiftValues(true);
+        return;
+      }
     }
+
+    setLiftValues(false);
   };
 
   const handleCalculateClick = () => {
@@ -83,6 +88,7 @@ export const RMInputs: React.FC<Props> = ({ week, setWeek }) => {
     setShowTable(true);
     checkInputValue();
   };
+
   return (
     <>
       <div className="flex flex-col mt-6 mb-6">
