@@ -147,7 +147,7 @@ export const RMInputs: React.FC<Props> = ({ week, setWeek }) => {
         </div>
       )}
       {showTable && <PercentageTable week={week} showTable={showTable} />}
-      <Accessories />
+      {/* <Accessories /> */}
     </>
   );
 };

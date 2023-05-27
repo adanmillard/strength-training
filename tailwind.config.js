@@ -3,10 +3,13 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        poppins: ["Poppins"],
+      },
       backgroundColor: {
         "transparent-black": "rgba(0, 0, 0, 0.5)",
       },
     },
+    plugins: [],
   },
-  plugins: [],
 };
