@@ -26,7 +26,7 @@ const defaultWeeks: Week[] = [
     liftPerc: [],
   },
   {
-    percentArray: [0.5, 0.5, 0.5, 0.5, 0.5],
+    percentArray: [0.7, 0.75, 0.8, 0.85, 0.9],
     liftPerc: [],
   },
   {
@@ -52,10 +52,9 @@ export const FiveByFiveProgram = () => {
           each 5x5 workout is to increase the weight over time.
         </p>
         <p className="mb-4 text-center mx-6 w-4/5 text-lg">
-          You do three workouts a week, with at least one rest day in between.
-          The 5x5 workout has been popular for decades because it's simple,
-          time-efficient, and very effective for gaining strength and muscle
-          mass.
+          You do four workouts a week. The 5x5 workout has been popular for
+          decades because it's simple, time-efficient, and very effective for
+          gaining strength and muscle mass.
         </p>
       </div>
       <RMInputs week={week} setWeek={setWeek} />
