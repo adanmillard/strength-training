@@ -13,6 +13,9 @@
 }
 
 @layer base {
+  body {
+    @apply font-poppins;
+  }
   h1 {
     @apply text-4xl tracking-normal;
   }

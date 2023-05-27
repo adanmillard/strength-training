@@ -37,9 +37,11 @@ export const FiveThreeOneProgram = () => {
   return (
     <>
       <Hamburger />
-      <div className="flex flex-col justify-center items-center">
-        <h1 className="mb-4 mt-4 text-center">5 / 3 / 1 Strength Training</h1>
-        <p className="mb-4 text-center mx-6">
+      <div className="flex flex-col justify-center items-center mt-6">
+        <h1 className="text-center my-6">
+          <b>5 / 3 / 1 Strength Training</b>
+        </h1>
+        <p className="mb-4 text-center mx-6 w-4/5 text-lg">
           The 5/3/1 workout is a powerlifting program designed by powerlifter
           Jim Wendler. The key concept is to slowly build strength through four
           barbell weightlifting exercises: the parallel squat, bench press,
@@ -47,7 +49,7 @@ export const FiveThreeOneProgram = () => {
           military press. The goal of the 5/3/1 workout is to achieve a new one
           rep max (1RM).
         </p>
-        <p className="mb-2 text-center">
+        <p className="mb-2 text-center w-4/5 text-lg">
           Enter your 1RM into the calculator to see what your percentage based
           lifts will be, enter KG or LBS, lifts are percentage based.
         </p>
