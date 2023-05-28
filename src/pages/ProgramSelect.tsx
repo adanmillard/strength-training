@@ -37,7 +37,6 @@ export const ProgramSelect = () => {
             >
               5 X 5
             </button>
-            <button className="btn bg-red-600 text-white">Single Lifts</button>
           </>
         )}
         <button className="btn" onClick={() => setBuildMuscle(!buildMuscle)}>

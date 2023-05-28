@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { RMInputs } from "../RMInputs/RMInputs";
 import { Hamburger } from "../Hamburger/Hamburger";
+import { Accessories } from "../Accessories/Accessories";
 
 type PercentArray = number[];
 
@@ -33,9 +34,18 @@ const defaultWeeks: Week[] = [
 
 export const FiveThreeOneProgram = () => {
   const [week, setWeek] = useState(defaultWeeks);
+  const [accessoryLifts, setAccessoryLifts] = useState(false);
 
   return (
     <>
+      {accessoryLifts && (
+        <div className="flex justify-center items-center h-full w-full absolute z-10">
+          <Accessories
+            accessoryLifts={accessoryLifts}
+            setAccessoryLifts={setAccessoryLifts}
+          />
+        </div>
+      )}
       <Hamburger />
       <div className="flex flex-col justify-center items-center mt-6">
         <h1 className="text-center my-6">
@@ -55,6 +65,19 @@ export const FiveThreeOneProgram = () => {
         </p>
       </div>
       <RMInputs week={week} setWeek={setWeek} />
+      <div className="flex justify-center my-4  ">
+        <p>
+          Along with the four key lifts, Accessory lifts are also necessary to
+          gaining strength. Here are some{" "}
+          <button
+            className="text-blue-500"
+            onClick={() => setAccessoryLifts(!accessoryLifts)}
+          >
+            Accessory Exercises
+          </button>{" "}
+          you can use to complement your workout.
+        </p>
+      </div>
     </>
   );
 };
