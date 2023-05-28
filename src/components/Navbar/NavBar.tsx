@@ -9,10 +9,10 @@ export const NavBar = () => {
   let navigate = useNavigate();
 
   const navItems = [
-    {
-      itemName: "Exercises",
-      link: "/exercises",
-    },
+    // {
+    //   itemName: "Exercises",
+    //   link: "/exercises",
+    // },
     {
       itemName: "About",
       link: "/",
