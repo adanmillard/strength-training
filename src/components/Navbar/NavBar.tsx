@@ -27,7 +27,7 @@ export const NavBar = () => {
     <>
       <nav className="flex justify-between h-20 items-center shadow-md fixed w-full">
         <div className="ml-4">
-          <h2>Strength Training</h2>
+          <h2>Training Buddy</h2>
         </div>
         <div
           onClick={() => setOpen(!open)}
