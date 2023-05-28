@@ -4,7 +4,7 @@ export const Homepage = () => {
   return (
     <>
       <NavBar />
-      <div className="flex flex-col justify-center h-screen items-center">
+      <div className="flex flex-col justify-center h-screen items-center ">
         <h1>
           <b>Training Buddy</b>
         </h1>

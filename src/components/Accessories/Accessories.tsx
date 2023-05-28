@@ -1,23 +1,22 @@
-import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+type Props = {
+  accessoryLifts: boolean;
+  setAccessoryLifts: (value: boolean) => void;
+};
 
-export const Accessories = () => {
-  const [showAccessory, setShowAccessory] = useState(false);
-
+export const Accessories: React.FC<Props> = ({
+  accessoryLifts,
+  setAccessoryLifts,
+}) => {
   return (
-    <div className="flex flex-col items-center">
-      <div className="mb-4">
-        <h1 onClick={() => setShowAccessory(!showAccessory)}>
-          Accessory Exercises{" "}
-          <FontAwesomeIcon
-            icon={showAccessory ? faChevronUp : faChevronDown}
-            size="xs"
-          />
-        </h1>
+    <div className=" bg-white rounded-md shadow-lg h-3/4 w-3/4 absolute p-5 border">
+      <div>
+        <button onClick={() => setAccessoryLifts(!accessoryLifts)}>
+          &#10005;
+        </button>
       </div>
-      {showAccessory && (
-        <>
+      <div className="flex flex-col items-center justify-evenly w-full h-full">
+        <h1>Accessory Exercises </h1>
+        <div>
           <p className="mx-20 text-center">
             To build more strength with your main lifts, accessory lifts are
             essential.
@@ -53,8 +52,8 @@ export const Accessories = () => {
               <p>Tricep Extensions</p>
             </div>
           </div>
-        </>
-      )}
+        </div>
+      </div>
     </div>
   );
 };
