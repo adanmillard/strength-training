@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { RMInputs } from "../RMInputs/RMInputs";
 import { Hamburger } from "../Hamburger/Hamburger";
+import { Accessories } from "../Accessories/Accessories";
 
 type PercentArray = number[];
 
@@ -37,11 +38,20 @@ const defaultWeeks: Week[] = [
 
 export const FiveByFiveProgram = () => {
   const [week, setWeek] = useState(defaultWeeks);
+  const [accessoryLifts, setAccessoryLifts] = useState(false);
 
   return (
     <>
+      {accessoryLifts && (
+        <div className="flex justify-center items-center h-full w-full absolute z-10">
+          <Accessories
+            accessoryLifts={accessoryLifts}
+            setAccessoryLifts={setAccessoryLifts}
+          />
+        </div>
+      )}
       <Hamburger />
-      <div className="flex flex-col justify-center items-center mt-6">
+      <div className="flex flex-col justify-center items-center">
         <h1 className="text-center my-6">
           <b>5 X 5 Strength Training</b>
         </h1>
@@ -56,8 +66,25 @@ export const FiveByFiveProgram = () => {
           decades because it's simple, time-efficient, and very effective for
           gaining strength and muscle mass.
         </p>
+        <p className="mb-2 text-center w-4/5 text-lg">
+          Enter your 1RM into the calculator to see what your percentage based
+          lifts will be, enter KG or LBS, lifts are percentage based.
+        </p>
       </div>
       <RMInputs week={week} setWeek={setWeek} />
+      <div className="flex justify-center my-4  ">
+        <p>
+          Along with the four key lifts, Accessory lifts are also necessary to
+          gaining strength. Here are some{" "}
+          <button
+            className="text-blue-500"
+            onClick={() => setAccessoryLifts(!accessoryLifts)}
+          >
+            Accessory Exercises
+          </button>{" "}
+          you can use to complement your workout.
+        </p>
+      </div>
     </>
   );
 };
