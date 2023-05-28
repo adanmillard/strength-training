@@ -8,7 +8,7 @@ export const Accessories: React.FC<Props> = ({
   setAccessoryLifts,
 }) => {
   return (
-    <div className=" bg-white rounded-md shadow-lg h-3/4 w-3/4 absolute p-5 border">
+    <div className=" bg-white rounded-md shadow-lg h-3/4 w-3/4 fixed p-5 border">
       <button
         className="absolute top-4 right-4 text-lg"
         onClick={() => setAccessoryLifts(!accessoryLifts)}

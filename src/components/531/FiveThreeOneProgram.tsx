@@ -47,7 +47,7 @@ export const FiveThreeOneProgram = () => {
         </div>
       )}
       <Hamburger />
-      <div className="flex flex-col justify-center items-center mt-6">
+      <div className="flex flex-col justify-center items-center ">
         <h1 className="text-center my-6">
           <b>5 / 3 / 1 Strength Training</b>
         </h1>
