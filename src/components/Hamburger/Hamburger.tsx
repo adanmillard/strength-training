@@ -14,7 +14,7 @@ export const Hamburger = () => {
     <div>
       <div
         onClick={() => setOpen(!open)}
-        className="text-3xl cursor-pointer z-10 mr-4 mt-4 fixed right-0 top-0"
+        className="text-3xl cursor-pointer z-10 mr-4 mt-4 fixed right-0 top-0 bg-white px-2"
       >
         <FontAwesomeIcon icon={open ? faClose : faBars} size="xs" />
       </div>
