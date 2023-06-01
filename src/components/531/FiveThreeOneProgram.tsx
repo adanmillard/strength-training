@@ -48,10 +48,10 @@ export const FiveThreeOneProgram = () => {
       )}
       <Hamburger />
       <div className="flex flex-col justify-center items-center ">
-        <h1 className="text-center my-6">
+        <h1 className="text-center md:my-6 text-2xl mb-4 mt-12">
           <b>5 / 3 / 1 Strength Training</b>
         </h1>
-        <p className="mb-4 text-center mx-6 w-4/5 text-lg">
+        <p className="mb-4 text-center md:mx-6 md:w-4/5 md:text-lg text-md mx-2">
           The 5/3/1 workout is a powerlifting program designed by powerlifter
           Jim Wendler. The key concept is to slowly build strength through four
           barbell weightlifting exercises: the parallel squat, bench press,
@@ -59,14 +59,14 @@ export const FiveThreeOneProgram = () => {
           military press. The goal of the 5/3/1 workout is to achieve a new one
           rep max (1RM).
         </p>
-        <p className="mb-2 text-center w-4/5 text-lg">
+        <p className="mb-2 text-center md:w-4/5 mx-2 md:text-lg text-md">
           Enter your 1RM into the calculator to see what your percentage based
           lifts will be, enter KG or LBS, lifts are percentage based.
         </p>
       </div>
       <RMInputs week={week} setWeek={setWeek} />
       <div className="flex justify-center my-4  ">
-        <p>
+        <p className="mb-2 text-center md:w-4/5 mx-2 md:text-lg text-md">
           Along with the four key lifts, Accessory lifts are also necessary to
           gaining strength. Here are some{" "}
           <button
