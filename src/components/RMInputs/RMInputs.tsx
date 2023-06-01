@@ -94,39 +94,43 @@ export const RMInputs: React.FC<Props> = ({ week, setWeek }) => {
       <div className="flex flex-col mt-6 mb-6">
         <div className="flex justify-center">
           <div className="flex flex-col items-start">
-            <label className="mr-4 mt-2" htmlFor="deadlift">
+            <label className="md:mr-4 ml-4 mt-2" htmlFor="deadlift">
               <b>1RM Deadlift:</b>
             </label>
-            <label className="mr-4 mt-2" htmlFor="squat">
+            <label className="md:mr-4 ml-4 mt-2" htmlFor="squat">
               <b>1RM Squat:</b>
             </label>
-            <label className="mr-4 mt-2" htmlFor="bench">
+            <label className="md:mr-4 ml-4 mt-2" htmlFor="bench">
               <b>1RM Bench Press:</b>
             </label>
-            <label className="mr-4 mt-2" htmlFor="overhead">
+            <label className="md:mr-4 ml-4 mt-2" htmlFor="overhead">
               <b>1RM Overhead Press:</b>
             </label>
           </div>
-          <div className="flex flex-col  items-center">
+          <div className="flex flex-col items-center">
             <input
+              className="w-4/5 md:w-full"
               type="number"
               name="deadlift"
               value={liftInputs.deadlift}
               onChange={handleInputChange}
             />
             <input
+              className="w-4/5 md:w-full"
               type="number"
               name="squat"
               value={liftInputs.squat}
               onChange={handleInputChange}
             />
             <input
+              className="w-4/5 md:w-full"
               type="number"
               name="bench"
               value={liftInputs.bench}
               onChange={handleInputChange}
             />
             <input
+              className="w-4/5 md:w-full"
               type="number"
               name="overhead"
               value={liftInputs.overhead}
