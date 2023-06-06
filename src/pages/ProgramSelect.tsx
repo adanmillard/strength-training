@@ -44,7 +44,9 @@ export const ProgramSelect = () => {
         </button>
         {buildMuscle && (
           <>
-            <button className="btn bg-green-600 text-white">Bro Split</button>
+            <button className="btn bg-green-600 text-white">
+              <a href="/bro-split">Bro Split</a>
+            </button>
             <button className="btn bg-green-600 text-white">Push / Pull</button>
           </>
         )}
