@@ -5,6 +5,7 @@ import { FiveThreeOnePage } from "./pages/FiveThreeOnePage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FiveByFivePage } from "./pages/FiveByFivePage";
 import { ExercisesPage } from "./pages/ExercisesPage";
+import { BroSplitPage } from "./pages/BroSplitPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/5/3/1-training" element={<FiveThreeOnePage />} />
           <Route path="/5X5-training" element={<FiveByFivePage />} />
           <Route path="/exercises" element={<ExercisesPage />} />
+          <Route path="/bro-split" element={<BroSplitPage />} />
         </Routes>
       </BrowserRouter>
     </div>

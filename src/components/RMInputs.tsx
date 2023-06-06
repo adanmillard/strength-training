@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { PercentageTable } from "../PercentageTable/PercentageTable";
-import { Accessories } from "../Accessories/Accessories";
+import { PercentageTable } from "./PercentageTable";
 
 type LiftInputs = {
   [key: string]: number;
@@ -151,7 +150,6 @@ export const RMInputs: React.FC<Props> = ({ week, setWeek }) => {
         </div>
       )}
       {showTable && <PercentageTable week={week} showTable={showTable} />}
-      {/* <Accessories /> */}
     </>
   );
 };
