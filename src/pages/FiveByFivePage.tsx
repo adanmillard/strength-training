@@ -1,4 +1,4 @@
-import { FiveByFiveProgram } from "../components/5by5/FiveByFiveProgram";
+import { FiveByFiveProgram } from "../components/FiveByFiveProgram";
 
 export const FiveByFivePage = () => {
   return (
