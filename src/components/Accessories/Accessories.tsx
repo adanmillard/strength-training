@@ -31,7 +31,7 @@ export const Accessories: React.FC<Props> = ({
           </p>
         </div>
         <div className="flex w-full md:justify-around flex-col md:flex-row text-center mt-2">
-          <div className="md:mb-8 md:mt-4">
+          <div className="md:mb-8 md:mt-4 mt-2">
             <h2 className="text-lg">
               <b>Deadlift:</b>
             </h2>
@@ -39,7 +39,7 @@ export const Accessories: React.FC<Props> = ({
             <p className="text-sm">Bent Over Rows</p>
             <p className="text-sm">Lat Pull Downs</p>
           </div>
-          <div className="md:mb-8 md:mt-4">
+          <div className="md:mb-8 md:mt-4 mt-4">
             <h2 className="text-lg">
               <b>Squat:</b>
             </h2>
@@ -47,7 +47,7 @@ export const Accessories: React.FC<Props> = ({
             <p className="text-sm">Lunges</p>
             <p className="text-sm">Lying Leg Curls</p>
           </div>
-          <div className="md:mb-8 md:mt-4">
+          <div className="md:mb-8 md:mt-4 mt-4">
             <h2 className="text-lg">
               <b>Bench Press:</b>
             </h2>
@@ -55,7 +55,7 @@ export const Accessories: React.FC<Props> = ({
             <p className="text-sm">Body Weight Dips</p>
             <p className="text-sm">Skullcrushers</p>
           </div>
-          <div className="md:mb-8 md:mt-4">
+          <div className="md:mb-8 md:mt-4 mt-4">
             <h2 className="text-lg">
               <b>Bench Press:</b>
             </h2>
