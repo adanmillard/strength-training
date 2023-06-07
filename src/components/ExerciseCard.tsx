@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 type Exercise = {
   name: string;
-  reps: number;
+  reps: number | string;
   sets: number;
 };
 
@@ -49,8 +49,8 @@ export const ExerciseCard: React.FC<{ data: BroSplitData }> = ({ data }) => {
               return (
                 <div key={i}>
                   <p>Exercise: {exercise.name}</p>
-                  <p>Sets: {exercise.sets}</p>
                   <p>Reps: {exercise.reps}</p>
+                  <p>Sets: {exercise.sets}</p>
                   <input
                     type="checkbox"
                     onClick={() => handleExerciseComplete(exercise.name)}

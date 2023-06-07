@@ -34,11 +34,116 @@ export const BroSplitData = {
       },
     ],
   },
+  back: {
+    name: "Back",
+    exercises: [
+      {
+        name: "Bent Over Row",
+        reps: 10,
+        sets: 3,
+      },
+      {
+        name: "Lat Pull Downs",
+        reps: 10,
+        sets: 3,
+      },
+      {
+        name: "Seated Low Row",
+        reps: 10,
+        sets: 3,
+      },
+      {
+        name: "Super Set A - Extensions",
+        reps: 10,
+        sets: 3,
+      },
+      {
+        name: "Super Set B - Wide Grip Pull Ups",
+        reps: "As many as possible",
+        sets: 3,
+      },
+    ],
+  },
   arms: {
     name: "Arms",
     exercises: [
       {
-        name: "Super Set B - Calve Raises",
+        name: "EZ Bar Bicep Curl",
+        reps: 10,
+        sets: 3,
+      },
+      {
+        name: "Dumbbell Hammer Curl",
+        reps: 10,
+        sets: 3,
+      },
+      {
+        name: "EZ Bar Skull Crushers",
+        reps: 10,
+        sets: 3,
+      },
+      {
+        name: "Cable Tricep Extensions",
+        reps: 10,
+        sets: 3,
+      },
+      {
+        name: "Super Set A - Single Arm Bicep Curls",
+        reps: 10,
+        sets: 3,
+      },
+      {
+        name: "Super Set B - Single Arm Tricep Kick Backs",
+        reps: 10,
+        sets: 3,
+      },
+    ],
+  },
+  chest: {
+    name: "Chest",
+    exercises: [
+      {
+        name: "Bench Press",
+        reps: 10,
+        sets: 3,
+      },
+      {
+        name: "Dumbbell Incline Press",
+        reps: 10,
+        sets: 3,
+      },
+      {
+        name: "Peck Deck Flies",
+        reps: 10,
+        sets: 3,
+      },
+      {
+        name: "Body Weight Push Ups",
+        reps: "As many as possible",
+        sets: 3,
+      },
+    ],
+  },
+  shoulders: {
+    name: "Shoulders",
+    exercises: [
+      {
+        name: "Seated Overhead Press",
+        reps: 10,
+        sets: 3,
+      },
+      {
+        name: "Dumbbell Lateral Raise",
+        reps: 10,
+        sets: 3,
+      },
+      {
+        name: "Rear Delt Peck Deck",
+        reps: 10,
+        sets: 3,
+      },
+      {
+        name: "Dumbbell Front Raise",
         reps: 10,
         sets: 3,
       },
