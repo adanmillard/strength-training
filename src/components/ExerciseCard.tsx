@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 type Exercise = {
   name: string;
@@ -15,24 +15,51 @@ type BroSplitData = {
 };
 
 export const ExerciseCard: React.FC<{ data: BroSplitData }> = ({ data }) => {
+  const [completedExercises, setCompletedExercises] = useState<string[]>([]);
+  const [selectMuscleGroup, setSelectMuscleGroup] = useState<string | null>(
+    null
+  );
+
+  const handleExerciseComplete = (exerciseName: string) => {
+    setCompletedExercises((prevCompletedExercises) =>
+      prevCompletedExercises.concat(exerciseName)
+    );
+  };
+
   return (
     <>
       <div>
-        {Object.entries(data).map(([muscleGroup, { exercises }]) => {
-          return (
-            <div key={muscleGroup}>
-              {exercises.map((exercise, i) => {
-                return (
-                  <div key={i}>
-                    <p>Exercise: {exercise.name}</p>
-                    <p>Sets: {exercise.sets}</p>
-                    <p>Reps: {exercise.reps}</p>
-                  </div>
-                );
-              })}
-            </div>
-          );
-        })}
+        <select onChange={(event) => setSelectMuscleGroup(event.target.value)}>
+          <option value="">Select Muscle Group</option>
+          {Object.keys(data).map((muscleGroup) => {
+            return (
+              <option key={muscleGroup} value={muscleGroup}>
+                {muscleGroup}
+              </option>
+            );
+          })}
+        </select>
+        {selectMuscleGroup && (
+          <div>
+            {data[selectMuscleGroup].exercises.map((exercise, i) => {
+              if (completedExercises.includes(exercise.name)) {
+                return null;
+              }
+
+              return (
+                <div key={i}>
+                  <p>Exercise: {exercise.name}</p>
+                  <p>Sets: {exercise.sets}</p>
+                  <p>Reps: {exercise.reps}</p>
+                  <input
+                    type="checkbox"
+                    onClick={() => handleExerciseComplete(exercise.name)}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        )}
       </div>
     </>
   );
