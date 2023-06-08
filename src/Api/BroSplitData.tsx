@@ -1,9 +1,10 @@
 export const BroSplitData = {
-  legs: {
+  Legs: {
     name: "Legs",
     exercises: [
       {
         name: "Squats",
+        src: "https://www.youtube.com/embed/-bJIpOq-LWk",
         reps: 10,
         sets: 3,
       },
@@ -34,7 +35,7 @@ export const BroSplitData = {
       },
     ],
   },
-  back: {
+  Back: {
     name: "Back",
     exercises: [
       {
@@ -64,7 +65,7 @@ export const BroSplitData = {
       },
     ],
   },
-  arms: {
+  Arms: {
     name: "Arms",
     exercises: [
       {
@@ -99,7 +100,7 @@ export const BroSplitData = {
       },
     ],
   },
-  chest: {
+  Chest: {
     name: "Chest",
     exercises: [
       {
@@ -124,7 +125,7 @@ export const BroSplitData = {
       },
     ],
   },
-  shoulders: {
+  Shoulders: {
     name: "Shoulders",
     exercises: [
       {

@@ -4,6 +4,7 @@ type Exercise = {
   name: string;
   reps: number | string;
   sets: number;
+  src?: string;
 };
 
 type MuscleGroup = {
@@ -19,6 +20,16 @@ export const ExerciseCard: React.FC<{ data: BroSplitData }> = ({ data }) => {
   const [selectMuscleGroup, setSelectMuscleGroup] = useState<string | null>(
     null
   );
+  const [exerciseVideos, setExerciseVideos] = useState<{
+    [key: string]: boolean;
+  }>({});
+
+  const toggleExerciseVideo = (exerciseName: string) => {
+    setExerciseVideos((prevExerciseVideos) => ({
+      ...prevExerciseVideos,
+      [exerciseName]: !prevExerciseVideos[exerciseName],
+    }));
+  };
 
   const handleExerciseComplete = (exerciseName: string) => {
     setCompletedExercises((prevCompletedExercises) =>
@@ -49,6 +60,20 @@ export const ExerciseCard: React.FC<{ data: BroSplitData }> = ({ data }) => {
               return (
                 <div key={i}>
                   <p>Exercise: {exercise.name}</p>
+                  <button onClick={() => toggleExerciseVideo(exercise.name)}>
+                    {exerciseVideos[exercise.name] ? "Close" : "View"} Exercise
+                    Tutorial
+                  </button>
+                  {exerciseVideos[exercise.name] && (
+                    <iframe
+                      width="560"
+                      height="315"
+                      src={exercise.src}
+                      title="YouTube video player"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    ></iframe>
+                  )}
+
                   <p>Reps: {exercise.reps}</p>
                   <p>Sets: {exercise.sets}</p>
                   <input
