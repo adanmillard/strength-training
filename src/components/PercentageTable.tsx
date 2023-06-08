@@ -58,7 +58,9 @@ export const PercentageTable: React.FC<Props> = ({ week, showTable }) => {
           <tbody>
             {week[weekSelected].liftPerc[0].values.map((value, i) => (
               <tr key={i}>
-                <td className="text-center font-bold">Set {i + 1}:</td>
+                <td className="md:text-center font-bold text-xs">
+                  Set {i + 1}:
+                </td>
                 {week[weekSelected].liftPerc.map((lift, j) => (
                   <td className="text-center p-3 text-sm" key={j}>
                     {lift.values[i].toFixed(1)}
