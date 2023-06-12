@@ -58,28 +58,37 @@ export const ExerciseCard: React.FC<{ data: BroSplitData }> = ({ data }) => {
               }
 
               return (
-                <div key={i}>
-                  <p>Exercise: {exercise.name}</p>
-                  <button onClick={() => toggleExerciseVideo(exercise.name)}>
-                    {exerciseVideos[exercise.name] ? "Close" : "View"} Exercise
-                    Tutorial
-                  </button>
-                  {exerciseVideos[exercise.name] && (
-                    <iframe
-                      width="560"
-                      height="315"
-                      src={exercise.src}
-                      title="YouTube video player"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    ></iframe>
-                  )}
-
-                  <p>Reps: {exercise.reps}</p>
-                  <p>Sets: {exercise.sets}</p>
-                  <input
-                    type="checkbox"
-                    onClick={() => handleExerciseComplete(exercise.name)}
-                  />
+                <div
+                  key={i}
+                  className="shadow-md p-4 flex justify-evenly my-4 bg-gray-100 rounded-md"
+                >
+                  <div>
+                    <p className="">Exercise: {exercise.name}</p>
+                    <button onClick={() => toggleExerciseVideo(exercise.name)}>
+                      {exerciseVideos[exercise.name] ? "Close" : "View"}{" "}
+                      Exercise Tutorial
+                    </button>
+                    {exerciseVideos[exercise.name] && (
+                      <span className=" w-4/5 h-auto">
+                        <iframe
+                          src={exercise.src}
+                          title="YouTube video player"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        ></iframe>
+                      </span>
+                    )}
+                  </div>
+                  <span className="flex flex-col justify-evenly ml-4">
+                    <p>Reps: {exercise.reps}</p>
+                    <p>Sets: {exercise.sets}</p>
+                  </span>
+                  <span className="flex flex-col justify-center items-center">
+                    <input
+                      className=" hover:border-blue-400"
+                      type="checkbox"
+                      onClick={() => handleExerciseComplete(exercise.name)}
+                    />
+                  </span>
                 </div>
               );
             })}

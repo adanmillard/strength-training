@@ -19,7 +19,7 @@ export const Hamburger = () => {
         <FontAwesomeIcon icon={open ? faClose : faBars} size="xs" />
       </div>
       <div className={open ? "flex w-full h-full flex-row-reverse " : "hidden"}>
-        <span className="w-full h-full bg-transparent-black fixed"></span>
+        <span className="w-screen h-full bg-transparent-black fixed"></span>
         <div className="bg-white h-full w-72 fixed ">
           <ul className=" relative ml-4 mt-4 top-10 ">
             {navItems.map((item, i) => {

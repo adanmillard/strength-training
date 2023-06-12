@@ -8,7 +8,10 @@ export const BroSplitPage = () => {
   return (
     <>
       <Hamburger />
-      <ExerciseCard data={broSplitData} />
+      <div className="flex w-screen flex-col justify-center items-center">
+        <h1>Bro Split</h1>
+        <ExerciseCard data={broSplitData} />
+      </div>
     </>
   );
 };
