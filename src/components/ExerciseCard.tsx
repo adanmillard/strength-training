@@ -83,7 +83,9 @@ export const ExerciseCard: React.FC<{ data: BroSplitData }> = ({ data }) => {
                     <p>Sets: {exercise.sets}</p>
                   </span>
                   <span className="flex flex-col justify-center items-center">
+                    <label htmlFor={exercise.name + " completed"}></label>
                     <input
+                      id={exercise.name + " completed"}
                       className=" hover:border-blue-400"
                       type="checkbox"
                       onClick={() => handleExerciseComplete(exercise.name)}
