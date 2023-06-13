@@ -39,7 +39,7 @@ export const ExerciseCard: React.FC<{ data: BroSplitData }> = ({ data }) => {
 
   return (
     <>
-      <div>
+      <div className="w-4/5 flex flex-col justify-center items-center">
         <select onChange={(event) => setSelectMuscleGroup(event.target.value)}>
           <option value="">Select Muscle Group</option>
           {Object.keys(data).map((muscleGroup) => {
@@ -51,7 +51,7 @@ export const ExerciseCard: React.FC<{ data: BroSplitData }> = ({ data }) => {
           })}
         </select>
         {selectMuscleGroup && (
-          <div>
+          <div className="w-4/5 flex flex-col justify-center items-center">
             {data[selectMuscleGroup].exercises.map((exercise, i) => {
               if (completedExercises.includes(exercise.name)) {
                 return null;
@@ -60,9 +60,9 @@ export const ExerciseCard: React.FC<{ data: BroSplitData }> = ({ data }) => {
               return (
                 <div
                   key={i}
-                  className="shadow-md p-4 flex justify-evenly my-4 bg-gray-100 rounded-md"
+                  className="shadow-md p-4 flex justify-around my-4 bg-gray-100 rounded-md w-2/3"
                 >
-                  <div>
+                  <div className=" w-52 h-auto">
                     <p className="">Exercise: {exercise.name}</p>
                     <button onClick={() => toggleExerciseVideo(exercise.name)}>
                       {exerciseVideos[exercise.name] ? "Close" : "View"}{" "}

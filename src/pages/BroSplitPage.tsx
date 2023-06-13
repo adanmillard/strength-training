@@ -8,7 +8,7 @@ export const BroSplitPage = () => {
   return (
     <>
       <Hamburger />
-      <div className="flex w-screen flex-col justify-center items-center">
+      <div className="flex w-full h-full flex-col justify-center items-center">
         <h1>Bro Split</h1>
         <ExerciseCard data={broSplitData} />
       </div>
