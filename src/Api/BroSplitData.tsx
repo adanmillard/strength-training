@@ -4,7 +4,7 @@ export const BroSplitData = {
     exercises: [
       {
         name: "Squats",
-        src: "https://www.youtube.com/embed/-bJIpOq-LWk",
+        src: "https://www.youtube-nocookie.com/embed/-bJIpOq-LWk",
         reps: 10,
         sets: 3,
       },
