@@ -40,7 +40,10 @@ export const ExerciseCard: React.FC<{ data: BroSplitData }> = ({ data }) => {
   return (
     <>
       <div className="w-4/5 flex flex-col justify-center items-center">
-        <select onChange={(event) => setSelectMuscleGroup(event.target.value)}>
+        <select
+          onChange={(event) => setSelectMuscleGroup(event.target.value)}
+          className="border rounded p-2 shadow w-auto"
+        >
           <option value="">Select Muscle Group</option>
           {Object.keys(data).map((muscleGroup) => {
             return (
@@ -69,13 +72,13 @@ export const ExerciseCard: React.FC<{ data: BroSplitData }> = ({ data }) => {
                       Exercise Tutorial
                     </button>
                     {exerciseVideos[exercise.name] && (
-                      <span className=" w-4/5 h-auto">
+                      <div className=" w-4/5 h-auto mr-8">
                         <iframe
                           src={exercise.src}
                           title="YouTube video player"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         ></iframe>
-                      </span>
+                      </div>
                     )}
                   </div>
                   <span className="flex flex-col justify-evenly ml-4">
@@ -83,13 +86,13 @@ export const ExerciseCard: React.FC<{ data: BroSplitData }> = ({ data }) => {
                     <p>Sets: {exercise.sets}</p>
                   </span>
                   <span className="flex flex-col justify-center items-center">
-                    <label htmlFor={exercise.name + " completed"}></label>
-                    <input
+                    <button
                       id={exercise.name + " completed"}
-                      className=" hover:border-blue-400"
-                      type="checkbox"
+                      className=" pointer"
                       onClick={() => handleExerciseComplete(exercise.name)}
-                    />
+                    >
+                      Completed
+                    </button>
                   </span>
                 </div>
               );
