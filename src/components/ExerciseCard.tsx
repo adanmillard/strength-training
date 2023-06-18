@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { RepsCompleted } from "./RepsCompleted";
 
 type Exercise = {
   name: string;
@@ -81,19 +82,12 @@ export const ExerciseCard: React.FC<{ data: BroSplitData }> = ({ data }) => {
                       </div>
                     )}
                   </div>
-                  <span className="flex flex-col justify-evenly ml-4">
-                    <p>Reps: {exercise.reps}</p>
-                    <p>Sets: {exercise.sets}</p>
-                  </span>
-                  <span className="flex flex-col justify-center items-center">
-                    <button
-                      id={exercise.name + " completed"}
-                      className=" pointer"
-                      onClick={() => handleExerciseComplete(exercise.name)}
-                    >
-                      Completed
-                    </button>
-                  </span>
+                  <RepsCompleted
+                    reps={exercise.reps}
+                    sets={exercise.sets}
+                    exerciseName={exercise.name}
+                    handleExerciseComplete={handleExerciseComplete}
+                  />
                 </div>
               );
             })}
