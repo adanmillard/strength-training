@@ -67,7 +67,7 @@ export const ExerciseCard: React.FC<{ data: BroSplitData }> = ({ data }) => {
                   className="shadow-md p-4 flex justify-around my-4 bg-gray-100 rounded-md w-2/3"
                 >
                   <div className=" w-52 h-auto">
-                    <p className="">Exercise: {exercise.name}</p>
+                    <p className="mb-4">Exercise: {exercise.name}</p>
                     <button onClick={() => toggleExerciseVideo(exercise.name)}>
                       {exerciseVideos[exercise.name] ? "Close" : "View"}{" "}
                       Exercise Tutorial
