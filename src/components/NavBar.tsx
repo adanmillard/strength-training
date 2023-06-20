@@ -2,6 +2,7 @@ import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Login } from "./Login";
 
 export const NavBar = () => {
   const [open, setOpen] = useState(false);
@@ -9,10 +10,6 @@ export const NavBar = () => {
   let navigate = useNavigate();
 
   const navItems = [
-    // {
-    //   itemName: "Exercises",
-    //   link: "/exercises",
-    // },
     {
       itemName: "About",
       link: "/",
@@ -49,12 +46,13 @@ export const NavBar = () => {
               return (
                 <li
                   key={i}
-                  className="md:ml-8  md:my-0 my-7 hover:text-gray-500"
+                  className="md:ml-8  md:my-2 my-7 hover:text-gray-500"
                 >
                   <a href={item.link}>{item.itemName}</a>
                 </li>
               );
             })}
+            <Login />
             <button
               className="btn mt-0 w-32 mx-0 md:mx-4 hover:text-gray-500"
               onClick={handleNavigate}
