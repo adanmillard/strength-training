@@ -11,9 +11,9 @@ export const Logout = () => {
     return <div>...Loading</div>;
   }
 
-  if (!user) {
-    navigate("/");
-  }
+  //   if (!user) {
+  //     navigate("/");
+  //   }
 
   return (
     <div>
